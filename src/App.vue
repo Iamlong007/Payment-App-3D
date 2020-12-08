@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="w-11/12">
+    <div class="w-11/12 mx-auto">
       <div class="w-12/12 cardContainer relative mx-auto">
         <div
           class="mt-10 w-10/12 frontCard mx-auto md:w-5/12 lg:w-3/12 bg-front bg-cover bg-no-repeat block"
@@ -36,6 +36,12 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="bg-white rounded-md shadow-lg p-6 w-9/12 mx-auto -mt-8">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, tempore.
+        Libero ipsa ab voluptates obcaecati sit, est quod cumque repudiandae
+        voluptas pariatur delectus esse, nostrum accusamus quidem minima ea?
+        Recusandae.
       </div>
     </div>
   </div>
