@@ -39,6 +39,8 @@ module.exports = {
     fontFamily: {
       'display': ['Space Mono'],
       'body': ['Space Mono'],
+      'header':['Nunito'],
+      'text':['Open Sans']
      },
     extend: {
        backgroundImage: theme => ({

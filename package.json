@@ -13,6 +13,8 @@
     "core-js": "^3.8.0",
     "tailwindcss": "^1.9.6",
     "typeface-be-vietnam": "^1.1.13",
+    "typeface-nunito": "^1.1.13",
+    "typeface-open-sans": "^1.1.13",
     "typeface-playfair-display": "^1.1.13",
     "typeface-public-sans": "^1.1.13",
     "typeface-roboto": "^1.1.13",

@@ -5,6 +5,8 @@ import '@/assets/css/tailwind.css';
 require('typeface-space-mono')
 require("typeface-roboto");
 require("typeface-playfair-display");
+require("typeface-open-sans");
+require("typeface-nunito");
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import "animate.css";
