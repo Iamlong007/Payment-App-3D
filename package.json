@@ -20,6 +20,7 @@
     "typeface-roboto": "^1.1.13",
     "typeface-space-mono": "^1.1.13",
     "vue": "^2.6.11",
+    "vue-credit-card-validation": "^0.1.10",
     "vue-router": "^3.2.0",
     "vue-slick-carousel": "^1.0.6",
     "vue-typewriter": "^2.2.1"

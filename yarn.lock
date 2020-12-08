@@ -8371,6 +8371,11 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
+vue-credit-card-validation@^0.1.10:
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/vue-credit-card-validation/-/vue-credit-card-validation-0.1.10.tgz#05cd5e09e97eb64417306f8f2da6af65db156a2c"
+  integrity sha512-0fi/oQWzxaRwKjQFIK+8B62rDUxZygE7C6P8EnTWfk1gb6ESdrf6LU29yK0mrANXJjqWsPgkgNALauC+NqBLlw==
+
 vue-eslint-parser@^7.0.0:
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.1.1.tgz#c43c1c715ff50778b9a7e9a4e16921185f3425d3"

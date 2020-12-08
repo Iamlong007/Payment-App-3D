@@ -54,8 +54,9 @@
             >Cardholder Name</label
           >
           <input
-            v-on:input="setCardName, maxNum"
+            v-on:input="setCardName"
             type="text"
+            maxlength="20"
             class="w-full mt-2 py-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
         </div>
@@ -64,8 +65,9 @@
             >Card Number</label
           >
           <input
-            type="number"
-            maxlength="2"
+            type="text"
+            pattern="\d*"
+            maxlength="19"
             v-on:input="setCardNum"
             class="w-full mt-2 py-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
@@ -77,6 +79,8 @@
             >
             <input
               type="text"
+              pattern="\d*"
+              maxlength="5"
               v-on:input="setCardExp"
               class="w-full mt-2 py-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
@@ -85,6 +89,8 @@
             <label for="" class="font-text text-sm text-gray-700">CVV</label>
             <input
               type="text"
+              pattern="\d*"
+              maxlength="3"
               v-on:input="setCardCvv"
               @focus="rotate = !rotate"
               @blur="rotate = !rotate"
@@ -111,6 +117,7 @@ export default {
   methods: {
     setCardName(event) {
       this.name = event.target.value;
+      this.name = this.name.toUpperCase();
     },
     setCardNum(event) {
       this.num = event.target.value;
@@ -120,10 +127,6 @@ export default {
     },
     setCardCvv(event) {
       this.cvv = event.target.value;
-    },
-    maxNum() {
-      if (this.value.length > this.maxLength)
-        this.value = this.value.slice(0, this.maxLength);
     },
   },
 };
@@ -149,6 +152,9 @@ export default {
 /* .cardContainer:hover {
   transform: rotateY(180deg);
 } */
+input {
+  text-transform: uppercase;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
