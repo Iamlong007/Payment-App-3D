@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <div class="w-11/12 mx-auto">
-      <div
+    <div class="beat">
+  <div
         :class="
           rotate
             ? 'cardContainerRotate relative mx-auto w-12/12'
@@ -24,7 +25,7 @@
                 </div>
                 <div>
                   <p class="ticket text-gray-400 text-xxs pt-1 md:pt-1">
-                    {{ expiry }}
+                    {{ month }} / {{year}}
                   </p>
                 </div>
               </div>
@@ -43,6 +44,8 @@
           </div>
         </div>
       </div>
+    </div>
+    
       <div
         class="bg-white rounded-md shadow-lg p-6 w-9/12 md:w-5/12 lg:w-3/12 mx-auto -mt-8"
       >
@@ -66,26 +69,38 @@
           >
           <input
             type="text"
-            pattern="\d*"
+            pattern="[0-9 ]+"
             maxlength="19"
             v-on:input="setCardNum"
             class="w-full mt-2 py-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
         </div>
         <div class="mt-4 flex flex-row justify-between">
-          <div class="flex flex-col w-5/12">
+          <div class="flex flex-col w-7/12">
             <label for="" class="font-text text-sm text-gray-700"
               >Expiry Date</label
             >
+            <div class="flex flex-row justify-between ">
+  <input
+              type="text"
+              pattern="\d*"
+              maxlength="2"
+              placeholder="Month"
+              v-on:input="setCardExpMonth"
+              class="w-5/12 mt-2 py-1 px-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            />
             <input
               type="text"
               pattern="\d*"
-              maxlength="5"
-              v-on:input="setCardExp"
-              class="w-full mt-2 py-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              maxlength="2"
+              placeholder="Year"
+              v-on:input="setCardExpYear"
+              class="w-5/12 mt-2 py-1 px-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
+            </div>
+          
           </div>
-          <div class="w-5/12 flex flex-col">
+          <div class="w-3/12 flex flex-col">
             <label for="" class="font-text text-sm text-gray-700">CVV</label>
             <input
               type="text"
@@ -109,7 +124,8 @@ export default {
       num: "**** **** ****",
       cvv: "***",
       name: "****** *******",
-      expiry: "**/**",
+      month:'**',
+      year:'**',
       rotate: false,
       maxLength: 20,
     };
@@ -122,8 +138,11 @@ export default {
     setCardNum(event) {
       this.num = event.target.value;
     },
-    setCardExp(event) {
-      this.expiry = event.target.value;
+    setCardExpMonth(event) {
+      this.month = event.target.value;
+    },
+    setCardExpYear(event) {
+      this.year = event.target.value;
     },
     setCardCvv(event) {
       this.cvv = event.target.value;
@@ -140,6 +159,23 @@ export default {
 .border {
   border: 4px solid red;
 }
+.beat {
+  animation: heartbeat 1s infinite alternate;
+  -webkit-animation: heartbeat 1s infinite alternate;
+  -moz-animation: heartbeat 1s infinite alternate;
+  -ms-animation: heartbeat 1s infinite alternate;
+  -o-animation: heartbeat 1s infinite alternate;
+}
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.4);
+  }
+}
+
 .cardContainer {
   transition: transform 0.8s;
   transform-style: preserve-3d;
@@ -152,9 +188,9 @@ export default {
 /* .cardContainer:hover {
   transform: rotateY(180deg);
 } */
-input {
+/* input {
   text-transform: uppercase;
-}
+} */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
