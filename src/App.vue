@@ -10,22 +10,22 @@
         "
       >
         <div
-          class="mt-10 w-10/12 frontCard mx-auto md:w-5/12 lg:w-3/12 bg-front bg-cover bg-no-repeat block"
+          class="mt-10 w-10/12 frontCard mx-auto md:w-5/12 lg:w-3/12 h-40 bg-front bg-cover bg-no-repeat block"
         >
-          <div class="w-10/12 pt-10 mx-auto flex flex-col">
-            <div class="mt-10">
-              <p class="ticket text-base text-gray-400 mt-4">{{ num }}</p>
+          <div class="w-10/12 pt-10 mx-auto sticky flex flex-col">
+            <div class="mt-10 ">
+              <p class="ticket fixed text-base text-gray-400 mt-4">{{ num }}</p>
             </div>
             <div class="flex flex-row justify-between">
-              <div class="mt-1 w-10/12 pb-6 flex flex-row justify-between">
+              <div class="mt-10 w-10/12 pb-6 flex flex-row  justify-between">
                 <div>
-                  <p class="ticket text-gray-400 font-light text-sm">
+                  <p class="ticket fixed text-gray-400 font-light text-sm">
                     {{ name }}
                   </p>
                 </div>
                 <div>
                   <p class="ticket text-gray-400 text-xxs pt-1 md:pt-1">
-                    {{ month }} / {{year}}
+                    {{ month }}{{year}}
                   </p>
                 </div>
               </div>
@@ -59,9 +59,12 @@
           <input
             v-on:input="setCardName"
             type="text"
+            name="cardName"
+            pattern="[A-Za-z]{3}"
             maxlength="20"
             class="w-full mt-2 py-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
+          
         </div>
         <div class="mt-4">
           <label for="" class="font-text text-sm text-gray-700"
@@ -121,7 +124,7 @@
 export default {
   data() {
     return {
-      num: "**** **** ****",
+      num: "**** **** **** ****",
       cvv: "***",
       name: "****** *******",
       month:'**',
@@ -136,10 +139,11 @@ export default {
       this.name = this.name.toUpperCase();
     },
     setCardNum(event) {
-      this.num = event.target.value;
+     this.num = event.target.value;
+      
     },
     setCardExpMonth(event) {
-      this.month = event.target.value;
+      this.month = event.target.value + "/";
     },
     setCardExpYear(event) {
       this.year = event.target.value;
@@ -172,7 +176,7 @@ export default {
   }
 
   to {
-    transform: scale(1.4);
+    transform: scale(1.3);
   }
 }
 
