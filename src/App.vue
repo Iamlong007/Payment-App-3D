@@ -72,7 +72,7 @@
           >
           <input
             type="text"
-            pattern="[0-9 ]+"
+            pattern= "[0–9]"
             maxlength="19"
             v-on:input="setCardNum"
             class="w-full mt-2 py-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
@@ -85,16 +85,16 @@
             >
             <div class="flex flex-row justify-between ">
   <input
-              type="text"
-              pattern="\d*"
+              type="number"
+             
               maxlength="2"
               placeholder="Month"
               v-on:input="setCardExpMonth"
               class="w-5/12 mt-2 py-1 px-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
             <input
-              type="text"
-              pattern="\d*"
+              type="number"
+            
               maxlength="2"
               placeholder="Year"
               v-on:input="setCardExpYear"
@@ -106,7 +106,7 @@
           <div class="w-3/12 flex flex-col">
             <label for="" class="font-text text-sm text-gray-700">CVV</label>
             <input
-              type="text"
+              type="number"
               pattern="\d*"
               maxlength="3"
               v-on:input="setCardCvv"
@@ -142,6 +142,7 @@ export default {
      this.num = event.target.value;
       
     },
+ 
     setCardExpMonth(event) {
       this.month = event.target.value + "/";
     },
