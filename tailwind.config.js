@@ -20,12 +20,6 @@ module.exports = {
        '6xl': '4rem',
       '7xl': '5rem',
      },
-    fontFamily: {
-     
-      'mono': ['Space Mono'],
-      'display': ['Playfair Display'],
-      'body': ['Playfair Display'],
-     },
     backgroundColor: theme => ({
       ...theme('colors'),
       'primary': '#F25F3A',

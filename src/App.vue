@@ -132,6 +132,27 @@
           </button>
         </div>
       </div>
+      <transition name="fade">
+        <div
+          v-if="dialog"
+          class="bg-white shadow-xl w-8/12 md:w-6/12 lg:w-4/12 h-40 mx-auto absolute inset-0 mt-40 rounded-md"
+        >
+          <div class="w-10/12 text-center flex flex-col mx-auto py-3 px-3 mt-5">
+            <div>
+              <img
+                src="./assets/images/ed-memoji.svg"
+                alt=""
+                class="w-2/12 mx-auto"
+              />
+            </div>
+            <div
+              class="pt-4 font-header font-semibold text-green-500 text-base text-center"
+            >
+              Card saved succesfully
+            </div>
+          </div>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -148,6 +169,7 @@ export default {
       maxLength: 20,
       loading: false,
       initial: true,
+      dialog: false,
     };
   },
   methods: {
@@ -170,6 +192,12 @@ export default {
     },
     load() {
       (this.initial = false), (this.loading = true);
+      setTimeout(() => {
+        (this.loading = false), (this.initial = true), (this.dialog = true);
+      }, 3000);
+      setTimeout(() => {
+        this.dialog = false;
+      }, 7500);
     },
   },
 };
@@ -250,6 +278,10 @@ input[type="number"] {
 .fade-leave-active {
   transition: opacity 2s ease;
 }
+.fade-leave-to {
+  opacity: 0;
+}
+
 .slide-in-enter {
   opacity: 0;
   transform: translateY(-50px);
