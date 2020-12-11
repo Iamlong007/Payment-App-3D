@@ -1,51 +1,53 @@
 <template>
   <div id="app">
     <div class="w-11/12 mx-auto">
-    <div class="beat">
-  <div
-        :class="
-          rotate
-            ? 'cardContainerRotate relative mx-auto w-12/12'
-            : 'w-12/12 cardContainer relative mx-auto'
-        "
-      >
+      <div class="beat">
         <div
-          class="mt-10 w-10/12 frontCard mx-auto md:w-5/12 lg:w-3/12 h-40 bg-front bg-cover bg-no-repeat block"
+          :class="
+            rotate
+              ? 'cardContainerRotate relative mx-auto w-12/12'
+              : 'w-12/12 cardContainer relative mx-auto'
+          "
         >
-          <div class="w-10/12 pt-10 mx-auto sticky flex flex-col">
-            <div class="mt-10 ">
-              <p class="ticket fixed text-base text-gray-400 mt-4">{{ num }}</p>
-            </div>
-            <div class="flex flex-row justify-between">
-              <div class="mt-10 w-10/12 pb-6 flex flex-row  justify-between">
-                <div>
-                  <p class="ticket fixed text-gray-400 font-light text-sm">
-                    {{ name }}
-                  </p>
-                </div>
-                <div>
-                  <p class="ticket text-gray-400 text-xxs pt-1 md:pt-1">
-                    {{ month }}{{year}}
-                  </p>
+          <div
+            class="mt-10 w-10/12 frontCard mx-auto md:w-5/12 lg:w-3/12 h-40 bg-front bg-cover bg-no-repeat block"
+          >
+            <div class="w-10/12 pt-10 mx-auto sticky flex flex-col">
+              <div class="mt-10">
+                <p class="ticket fixed text-base text-gray-400 mt-4">
+                  {{ num }}
+                </p>
+              </div>
+              <div class="flex flex-row justify-between">
+                <div class="mt-10 w-10/12 pb-6 flex flex-row justify-between">
+                  <div>
+                    <p class="ticket fixed text-gray-400 font-light text-sm">
+                      {{ name }}
+                    </p>
+                  </div>
+                  <div>
+                    <p class="ticket text-gray-400 text-xxs pt-1 md:pt-1">
+                      {{ month }}{{ year }}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          class="w-10/12 backCard absolute inset-0 mx-auto md:w-5/12 lg:w-3/12 bg-back bg-cover bg-no-repeat block"
-        >
-          <div class="w-10/12 pt-3 pb-12 mx-auto flex flex-col">
-            <div class="w-12/12">
-              <p class="ticket text-base text-right text-gray-700 mt-4">
-                {{ cvv }}
-              </p>
+          <div
+            class="w-10/12 backCard absolute inset-0 mx-auto md:w-5/12 lg:w-3/12 bg-back bg-cover bg-no-repeat block"
+          >
+            <div class="w-10/12 pt-3 pb-12 mx-auto flex flex-col">
+              <div class="w-12/12">
+                <p class="ticket text-base text-right text-gray-700 mt-4">
+                  {{ cvv }}
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    
+
       <div
         class="bg-white rounded-md shadow-lg p-6 w-9/12 md:w-5/12 lg:w-3/12 mx-auto -mt-8"
       >
@@ -59,13 +61,11 @@
           <input
             v-on:input="setCardName"
             type="text"
-            
             name="cardName"
             pattern="[A-Za-z]{3}"
             maxlength="20"
             class="w-full mt-2 py-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
-          
         </div>
         <div class="mt-4">
           <label for="" class="font-text text-sm text-gray-700"
@@ -73,8 +73,7 @@
           >
           <input
             type="text"
-            
-            v-mask=" '#### #### #### ####'"
+            v-mask="'#### #### #### ####'"
             maxlength="19"
             v-on:input="setCardNum"
             class="w-full mt-2 py-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
@@ -85,31 +84,30 @@
             <label for="" class="font-text text-sm text-gray-700"
               >Expiry Date</label
             >
-            <div class="flex flex-row justify-between ">
-             <input
-              type="text"
-               v-mask=" '##'"
-              maxlength="2"
-              placeholder="Month"
-              v-on:input="setCardExpMonth"
-              class="w-5/12 mt-2 py-1 px-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
-            />
-            <input
-              type="text"
-            v-mask=" '##'"
-              maxlength="2"
-              placeholder="Year"
-              v-on:input="setCardExpYear"
-              class="w-5/12 mt-2 py-1 px-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
-            />
+            <div class="flex flex-row justify-between">
+              <input
+                type="text"
+                v-mask="'##'"
+                maxlength="2"
+                placeholder="Month"
+                v-on:input="setCardExpMonth"
+                class="w-5/12 mt-2 py-1 px-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              />
+              <input
+                type="text"
+                v-mask="'##'"
+                maxlength="2"
+                placeholder="Year"
+                v-on:input="setCardExpYear"
+                class="w-5/12 mt-2 py-1 px-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              />
             </div>
-          
           </div>
           <div class="w-3/12 flex flex-col">
             <label for="" class="font-text text-sm text-gray-700">CVV</label>
             <input
               type="text"
-              v-mask=" '###'"
+              v-mask="'###'"
               maxlength="3"
               v-on:input="setCardCvv"
               @focus="rotate = !rotate"
@@ -117,11 +115,22 @@
               class="w-full mt-2 py-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
-         
         </div>
-         <div class="mt-8 pb-4">
-            <button class=" text-white w-full focus:outline-none hover:bg-green-500 py-3 rounded-sm shadow-md mx-auto bg-green-400 font-display font-semibold text-sm">  Save</button>
-          </div>
+
+        <div class="mt-8 pb-4">
+          <button
+            @click="load"
+            class="text-white w-full focus:outline-none hover:bg-green-500 py-3 rounded-sm shadow-md mx-auto bg-green-400 font-display font-semibold text-sm"
+          >
+            <span v-if="initial">Save</span>
+            <v-progress-circular
+              indeterminate
+              color="white"
+              :size="20"
+              v-if="loading"
+            ></v-progress-circular>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -133,10 +142,12 @@ export default {
       num: "**** **** **** ****",
       cvv: "***",
       name: "****** *******",
-      month:'**',
-      year:'**',
+      month: "**",
+      year: "**",
       rotate: false,
       maxLength: 20,
+      loading: false,
+      initial: true,
     };
   },
   methods: {
@@ -145,10 +156,9 @@ export default {
       this.name = this.name.toUpperCase();
     },
     setCardNum(event) {
-     this.num = event.target.value;
-     
+      this.num = event.target.value;
     },
- 
+
     setCardExpMonth(event) {
       this.month = event.target.value + "/";
     },
@@ -157,6 +167,9 @@ export default {
     },
     setCardCvv(event) {
       this.cvv = event.target.value;
+    },
+    load() {
+      (this.initial = false), (this.loading = true);
     },
   },
 };

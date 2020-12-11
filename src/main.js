@@ -11,6 +11,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import "animate.css";
 import VueTheMask from 'vue-the-mask'
+import vuetify from './plugins/vuetify';
 
 
 
@@ -23,5 +24,7 @@ new Vue({
   created () {
     AOS.init()
   },
+
+  vuetify,
   render: h => h(App)
 }).$mount('#app')
