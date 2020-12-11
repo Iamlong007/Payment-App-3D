@@ -135,14 +135,14 @@
       <transition name="fade">
         <div
           v-if="dialog"
-          class="bg-white shadow-xl w-8/12 md:w-6/12 lg:w-4/12 h-40 mx-auto absolute inset-0 mt-40 rounded-md"
+          class="bg-white shadow-xl w-8/12 md:w-6/12 lg:w-4/12 h-48 lg:h-56 mx-auto absolute inset-0 mt-40 rounded-md"
         >
           <div class="w-10/12 text-center flex flex-col mx-auto py-3 px-3 mt-5">
             <div>
               <img
                 src="./assets/images/ed-memoji.svg"
                 alt=""
-                class="w-2/12 mx-auto"
+                class="w-4/12 mx-auto"
               />
             </div>
             <div
