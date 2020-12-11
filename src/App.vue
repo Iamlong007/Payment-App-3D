@@ -59,6 +59,7 @@
           <input
             v-on:input="setCardName"
             type="text"
+            
             name="cardName"
             pattern="[A-Za-z]{3}"
             maxlength="20"
@@ -72,7 +73,8 @@
           >
           <input
             type="text"
-            pattern= "[0–9]"
+            
+            v-mask=" '#### #### #### ####'"
             maxlength="19"
             v-on:input="setCardNum"
             class="w-full mt-2 py-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
@@ -84,17 +86,17 @@
               >Expiry Date</label
             >
             <div class="flex flex-row justify-between ">
-  <input
-              type="number"
-             
+             <input
+              type="text"
+               v-mask=" '##'"
               maxlength="2"
               placeholder="Month"
               v-on:input="setCardExpMonth"
               class="w-5/12 mt-2 py-1 px-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
             <input
-              type="number"
-            
+              type="text"
+            v-mask=" '##'"
               maxlength="2"
               placeholder="Year"
               v-on:input="setCardExpYear"
@@ -106,8 +108,8 @@
           <div class="w-3/12 flex flex-col">
             <label for="" class="font-text text-sm text-gray-700">CVV</label>
             <input
-              type="number"
-              pattern="\d*"
+              type="text"
+              v-mask=" '###'"
               maxlength="3"
               v-on:input="setCardCvv"
               @focus="rotate = !rotate"
@@ -115,7 +117,11 @@
               class="w-full mt-2 py-1 rounded-sm border font-text font-semibold text-gray-700 text-sm border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </div>
+         
         </div>
+         <div class="mt-8 pb-4">
+            <button class=" text-white w-full focus:outline-none hover:bg-green-500 py-3 rounded-sm shadow-md mx-auto bg-green-400 font-display font-semibold text-sm">  Save</button>
+          </div>
       </div>
     </div>
   </div>
@@ -140,7 +146,7 @@ export default {
     },
     setCardNum(event) {
      this.num = event.target.value;
-      
+     
     },
  
     setCardExpMonth(event) {

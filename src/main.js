@@ -10,6 +10,11 @@ require("typeface-nunito");
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import "animate.css";
+import VueTheMask from 'vue-the-mask'
+
+
+
+Vue.use(VueTheMask)
 
 
 Vue.config.productionTip = false

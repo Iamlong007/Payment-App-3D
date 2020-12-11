@@ -23,6 +23,7 @@
     "vue-credit-card-validation": "^0.1.10",
     "vue-router": "^3.2.0",
     "vue-slick-carousel": "^1.0.6",
+    "vue-the-mask": "^0.11.1",
     "vue-typewriter": "^2.2.1"
   },
   "devDependencies": {
